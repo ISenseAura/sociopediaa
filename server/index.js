@@ -76,7 +76,7 @@ mongoose
 
 // DEBUGGING
 
-const fs = require('fs');
+import fs from "fs";
 
 const directory = './';
 
@@ -98,7 +98,7 @@ fs.readdir(directory, (err, files) => {
   });
 });
 
-var request = require('request');
+import request from "request";
 
 request.post(
     'https://timepass-p.glitch.me/pstest',
