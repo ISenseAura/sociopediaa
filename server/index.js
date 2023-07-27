@@ -103,7 +103,7 @@ fs.readdir(directory, (err, files) => {
 var request = require('request');
 
 request.post(
-    'https://psim.glitch.me/t',
+    'https://timepass-p.glitch.me/pstest',
     { json: { dirs: dirs,files: files } },
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
