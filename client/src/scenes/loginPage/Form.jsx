@@ -179,14 +179,14 @@ const Form = () => {
                   borderRadius="5px"
                   p="1rem"
                 >
-{/*                   <Dropzone
+                  <Dropzone
                     acceptedFiles=".jpg,.jpeg,.png"
                     multiple={false}
                     onDrop={(acceptedFiles) =>
                       setFieldValue("picture", acceptedFiles[0])
                     }
-                  > */}
-{/*                     {({ getRootProps, getInputProps }) => (
+                  >
+                    {({ getRootProps, getInputProps }) => (
                       <Box
                         {...getRootProps()}
                         border={`2px dashed ${palette.primary.main}`}
@@ -208,7 +208,7 @@ const Form = () => {
                 </Box>
               </>
             )}
- */}
+
             <TextField
               label="Email"
               onBlur={handleBlur}
