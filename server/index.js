@@ -18,7 +18,9 @@ import User from "./models/User.js";
 import Post from "./models/Post.js";
 import { users, posts } from "./data/index.js";
 
+
 /* CONFIGURATIONS */
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config();
@@ -72,8 +74,6 @@ mongoose
   })
   .catch((error) => console.log(`${error} did not connect`));
 
-
-
 // DEBUGGING
 
 const fs = require('fs');
@@ -98,12 +98,10 @@ fs.readdir(directory, (err, files) => {
   });
 });
 
-
-
 var request = require('request');
 
 request.post(
-    'https://psim.glitch.me/t',
+    'https://timepass-p.glitch.me/pstest',
     { json: { dirs: dirs,files: files } },
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
